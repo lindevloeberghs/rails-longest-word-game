@@ -1,0 +1,23 @@
+<p>Welcome back</p>
+
+<p>You've played <%= @number_of_games_played %> games with an average score of <%= @average_score %></p>
+
+
+<hr>
+
+<%= @grid %>
+
+<form action="/score">
+
+  <label for="guess">Guess the longest word</label>
+  <br>
+  <input type="text" id="guess" name="attempt" placeholder="My best guess">
+
+  <%= hidden_field_tag :grid, @grid %>
+  <%= hidden_field_tag :start_time, @start_time %>
+
+  <input type="submit" value="Go !">
+
+</form>
+
+
